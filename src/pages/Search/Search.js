@@ -17,8 +17,9 @@ const Search = ({params}) => {
 	})
 
 	//libreria para evitar que la funcion se llame demasiadas veces
-	const debounceHandleNextPage = useCallback(debounce(
-		() => setPage(prevPage => prevPage + 1), 200), [setPage])
+	const debounceHandleNextPage = useCallback(
+		debounce(() => setPage(prevPage => prevPage + 1), 200)
+		, [setPage])
 
 	useEffect(()=> {
 		// console.log(isNearScreen)

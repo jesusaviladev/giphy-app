@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 //exportamos componente formulario para evitar renderizados
 
 const SearchForm = ({ onSubmit }) => {
-	console.log('me renderizo')
+
 	const [ keyword, setKeyword ] = useState('')
 	//Tomamos la keyword como parte del estado (RENDERIZA DE NUEVO)
 
