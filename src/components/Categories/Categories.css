@@ -1,0 +1,28 @@
+.categories{
+	padding:30px;
+	background-color: #000;
+	min-height: 100vh;
+}
+
+.categories__list{
+  list-style:none;
+  display: grid;
+  padding: 0 40px;
+}
+
+@media screen and (min-width: 768px) {
+	.categories__list{
+	    grid-template-columns: repeat(3, 1fr);
+	    column-gap: 1rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.categories__list{
+	    grid-template-columns: 1fr;
+	}
+}
+
+.categories__link:hover{
+	color: slateblue;
+}

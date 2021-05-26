@@ -1,0 +1,14 @@
+.app__link{
+	color: inherit;
+	text-decoration: none;
+	padding: 20px;
+}
+
+.image{
+	max-width: 100%;
+	object-fit: contain;
+	cursor: pointer;
+	text-align: center;
+}
+
+
