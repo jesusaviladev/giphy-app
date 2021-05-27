@@ -37,7 +37,7 @@ const Search = ({params}) => {
 
 	return (
 		<>
-		<h2>{`Resultados de búsqueda: "${decodeURI(keyword)}"`}</h2>
+		<h2 className="search__title">{`Resultados de búsqueda: "${decodeURI(keyword)}"`}</h2>
 		<Giflist gifs={gifs}></Giflist>
 		<div id="visor" ref={externalRef}></div>
 		</>

@@ -7,7 +7,10 @@ export default function Giflist({gifs = []}){
 	return (
 		<>
 			<div className="gifs-container">
-	           {gifs.map(singleGifs => <Gif id={singleGifs.id} title={singleGifs.title} url={singleGifs.url} key={singleGifs.id}></Gif>)}
+	           {gifs.map(singleGifs => <Gif id={singleGifs.id} 
+	           	title={singleGifs.title} 
+	           	url={singleGifs.url} 
+	           	key={singleGifs.id+Math.random()}></Gif>)}
 	         </div>
          </>
           );

@@ -1,6 +1,6 @@
 import API_KEY from './config.js'
 
-export default function getGifs({keyword = 'programming', limit = 15, page = 0} = {}){
+export default function getGifs({keyword = 'programming', limit = 10, page = 0} = {}){
 
 	const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page*limit}&rating=g&lang=es`
     //Hacemos consulta a la API y devolvemos un array con los datos

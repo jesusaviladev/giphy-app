@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Home from './pages/Home/Home.js';
-import Search from './pages/Search/Search.js';
+import Home from './pages/Home/Home.js'
+import Search from './pages/Search/Search.js'
 import Detail from './pages/Detail/Detail.js';
-import { Link, Route } from "wouter";
+import { Link, Route } from "wouter"
 import  { GifsContextProvider } from './context/GifsContext.js'
 
 const App = () => {
@@ -24,6 +24,8 @@ const App = () => {
                 <Route path="/search/:keyword" component={Search}/>
 
                 <Route path="/gif/:id" component={Detail}/>
+
+                <Route path="/404" component={()=> <h2>404 Error :(</h2>}/> 
 
               </GifsContextProvider>
           </main>

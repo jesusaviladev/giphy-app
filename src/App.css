@@ -92,6 +92,19 @@ body{
   }
 }
 
+.search__title{
+  text-align: center;
+}
+
+.detail__title{
+  text-align: center;
+}
+
+.detail__content{
+  display: flex;
+  justify-content: center;
+}
+
 
 
 

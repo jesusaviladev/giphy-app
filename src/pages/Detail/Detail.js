@@ -1,24 +1,34 @@
-import React, {useContext} from 'react'
-import Context from '../../context/GifsContext.js'
+import React from 'react'
 import Gif from '../../components/Gif/Gif.js'
+import useSingleGif from '../../hooks/useSingleGif.js'
+import Spinner from '../../components/Spinner/Spinner.js'
+import { Redirect } from 'wouter'
 
 const Detail = ({params}) =>{
-	const {id} = params
+	const { id } = params
 	
-	const { gifs } = useContext(Context)
+	const { gif, loading, error } = useSingleGif({id})
 
-	const gif = gifs.find( singleGif => singleGif.id === id) 
-
-	if(!gif)
+	if (loading){
 		return (
-			<p>Gif con id {id} no ha sido encontrado</p>
-			);
+			<Spinner/>
+			)
+	}
 
+	if(error){
+		return <Redirect to='/404'></Redirect>
+	}
+
+	if(!gif) return null 
 
 	return (
 		<>
-			<p>Gif con id {id}</p>
-			<Gif {...gif}></Gif>
+		<section className="detail">
+			<h2 className="detail__title">{gif.title}</h2>
+			<div className="detail__content">
+				<Gif {...gif}></Gif>
+			</div>
+		</section>
 		</>
 
 		);
