@@ -13,7 +13,9 @@ const App = () => {
 
           <main className="app">
           	  <Link to="/">
-                  <h1 className="app__title">Giphy <span className="app__title--color">app</span></h1> 
+                  <h1 className="app__title">Giphy 
+                    <span className="app__title--color">app</span>
+                  </h1> 
                   <p className="app__subtitle">By @jesusaviladev</p>
               </Link>
               

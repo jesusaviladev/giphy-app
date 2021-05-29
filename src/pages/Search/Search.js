@@ -4,6 +4,7 @@ import useGifs from '../../hooks/useGifs.js'
 import Spinner from '../../components/Spinner/Spinner.js'
 import useNearScreen from '../../hooks/useNearScreen.js'
 import debounce from 'just-debounce-it'
+import { Helmet } from 'react-helmet'
 
 const Search = ({params}) => {
 
@@ -30,14 +31,25 @@ const Search = ({params}) => {
 
 	 if(loading){
 	 	return (
+	 		<>
+	 		<Helmet>
+	 			<title>Cargando...</title>
+	 		</Helmet>
 		 	<Spinner></Spinner>
+		 	</>
 	 		);
 	 }
 
 
 	return (
 		<>
-		<h2 className="search__title">{`Resultados de búsqueda: "${decodeURI(keyword)}"`}</h2>
+		<Helmet>
+			<title>{`Resultados de búsqueda de: ${keyword}`}</title>
+			<meta name="description" 
+			content={`Resultados de búsqueda de: ${keyword}`}/>
+		</Helmet>
+		<h2 className="search__title">{`Resultados de búsqueda: 
+			"${decodeURI(keyword)}"`}</h2>
 		<Giflist gifs={gifs}></Giflist>
 		<div id="visor" ref={externalRef}></div>
 		</>
