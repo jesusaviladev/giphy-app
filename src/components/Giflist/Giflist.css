@@ -13,17 +13,4 @@
 	}
 }
 
-.gifs-container img:nth-child(3n+1):hover{
-  outline: 5px solid limegreen;
-}
-
-.gifs-container img:nth-child(3n+2):hover{
-  outline: 5px solid slateblue;
-}
-
-
-.gifs-container img:nth-child(3n+3):hover{
-  outline: 5px solid goldenrod;
-}
-
 

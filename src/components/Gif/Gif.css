@@ -6,9 +6,35 @@
 
 .image{
 	max-width: 100%;
-	object-fit: contain;
+	object-fit: cover;
 	cursor: pointer;
-	text-align: center;
 }
+
+.gif{
+	position: relative;
+}
+
+.gif:after{
+	content: attr(data-id);
+	font-size: 12px;
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	background-color: rgba(0,0,0,.5)
+}
+
+.gif:nth-child(3n+1) img:hover{
+  outline: 5px solid limegreen;
+}
+
+.gif:nth-child(3n+2) img:hover{
+  outline: 5px solid slateblue;
+}
+
+
+.gif:nth-child(3n+3) img:hover{
+  outline: 5px solid goldenrod;
+}
+
 
 

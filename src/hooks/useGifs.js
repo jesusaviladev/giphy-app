@@ -4,7 +4,7 @@ import Context from '../context/GifsContext.js';
 
 const INITIAL_PAGE = 0
 
-export default function useGifs ({ keyword } = { keyword: null }) {
+export default function useGifs ({ keyword, rating } = { keyword: null, rating: 'g' }) {
 
 	const {gifs, setGifs} = useContext(Context)
 	const [page, setPage] = useState(INITIAL_PAGE)
@@ -17,7 +17,7 @@ export default function useGifs ({ keyword } = { keyword: null }) {
 	useEffect(() => { 
 	 	//pedimos datos a la API con el servicio getGifs
 	 	setLoading(true)
-	     getGifs({keyword : keywordToUse})
+	     getGifs({keyword: keywordToUse, rating: rating})
 	      .then(res => {
 	      	setGifs(res)
 	      	setLoading(false)
@@ -29,19 +29,19 @@ export default function useGifs ({ keyword } = { keyword: null }) {
 
 	      }
 
-	  }, [keyword, keywordToUse, setGifs])
+	  }, [keyword, keywordToUse, setGifs, rating])
 
 	useEffect(()=> {
 			//pedimos datos de paginacion
 	 	if(page === INITIAL_PAGE) return null
 
-	 	getGifs({keyword: keywordToUse, page: page})
+	 	getGifs({keyword: keywordToUse, page: page, rating: rating})
 	 		.then(nextGifs => {
 	 			setGifs(prevGifs => prevGifs.concat(nextGifs))
 	 		})
 
 
-	 }, [keywordToUse, page, setGifs])
+	 }, [keywordToUse, page, setGifs, rating])
 
 	 return {loading, gifs, setPage}
 }

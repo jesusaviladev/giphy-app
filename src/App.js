@@ -14,7 +14,7 @@ const App = () => {
           <main className="app">
           	  <Link to="/">
                   <h1 className="app__title">Giphy 
-                    <span className="app__title--color">app</span>
+                    <span className="app__title--color"> app</span>
                   </h1> 
                   <p className="app__subtitle">By @jesusaviladev</p>
               </Link>
@@ -23,7 +23,7 @@ const App = () => {
 
             	  <Route path="/" component={Home}/>
 
-                <Route path="/search/:keyword" component={Search}/>
+                <Route path="/search/:keyword/:rating?" component={Search}/>
 
                 <Route path="/gif/:id" component={Detail}/>
 

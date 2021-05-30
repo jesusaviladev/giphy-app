@@ -14,7 +14,6 @@ const getSingleGif = ({ id }) => {
 
 		const { data } = res
 		const {images, title, id} = data
-		console.log(images)
 		const { url } = images.downsized_medium
 
 		return { title, id, url }
