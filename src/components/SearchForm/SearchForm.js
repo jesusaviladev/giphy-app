@@ -21,7 +21,7 @@ const SearchForm = ({initialKeyword = '', initialRating = 'g'}) => {
 			updateKeyword, 
 			updateRating } = useForm({initialKeyword, initialRating})
 
-	const [ path, pushLocation ] = useLocation()
+	const [, pushLocation ] = useLocation()
 	//Usamos el hook de wouter para 
 	//cambiar la localizacion (se puede llamar como sea)
 

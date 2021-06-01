@@ -2,7 +2,7 @@ import { useReducer } from 'react'
 
 //Hook para separar la logica del estado del componente de su renderizado
 
-const useForm = ({initialKeyword, initialRating}) => {
+const useForm = ({initialKeyword, initialRating} = {}) => {
 
 	const REDUCER_ACTIONS = {
 		UPDATE_KEYWORD: 'update_keyword',
