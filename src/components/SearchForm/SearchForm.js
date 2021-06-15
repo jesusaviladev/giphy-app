@@ -63,7 +63,7 @@ const SearchForm = ({initialKeyword = '', initialRating = 'g'}) => {
 				{RATINGS.map(rate => <option value={rate} 
 					key={rate}>{rate}</option>)}
 			</select>
-			<button className="form__button">Buscar</button>
+			<button className="button button--search">Buscar</button>
 		</form>
 		)
 }

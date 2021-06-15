@@ -16,7 +16,9 @@ const Home = () => {
 				<title>Giphy App | Home </title>
 				<meta name="description" content="Buscador de gifs"/>
 			</Helmet>
+
 			<SearchForm></SearchForm>
+			
 			<div className="app__container">
 				<section className="app__body">	
 

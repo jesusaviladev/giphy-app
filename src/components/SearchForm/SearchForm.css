@@ -18,21 +18,9 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.form__button{
-  border: none;
-  background-color: slateblue;
-  color: #fff;
+.button--search{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  cursor: pointer;
-  padding: 10px 12px;
-  font-family: 'Poppins', sans-serif;
-}
-
-@media screen and (min-width: 1024px) {
-  .form__button:hover{
-    background-color: MediumPurple;
-  }
 }
 
 .form__select{

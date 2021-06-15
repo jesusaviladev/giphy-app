@@ -9,15 +9,19 @@ const getSingleGif = ({ id }) => {
 			const res = response.json()
 			return res
 		}
+		else{
+			throw new Error(`Status code: ${response.status}`)
+		}
 	})
 	.then(res => {
 
 		const { data } = res
-		const {images, title, id} = data
+		const { images, title, id } = data
 		const { url } = images.downsized_medium
 
 		return { title, id, url }
 	})
+
 }
 
 export default getSingleGif

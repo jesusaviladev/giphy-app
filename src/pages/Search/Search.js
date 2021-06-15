@@ -9,8 +9,8 @@ import { Helmet } from 'react-helmet'
 
 const Search = ({params}) => {
 
-	const {keyword, rating } = params 
-	const {loading, gifs, setPage} = useGifs({keyword, rating}) //recuperar gifs
+	const { keyword, rating } = params 
+	const { loading, gifs, setPage } = useGifs({keyword, rating}) //recuperar gifs
 	const externalRef = useRef()
 	const { isNearScreen } = useNearScreen({ //lazy load
 		distance: '200px', 
@@ -44,16 +44,20 @@ const Search = ({params}) => {
 
 	return (
 		<>
-		<Helmet>
-			<title>{`Resultados de búsqueda de: ${decodeURI(keyword)}`}</title>
-			<meta name="description" 
-			content={`Resultados de búsqueda de: ${decodeURI(keyword)}`}/>
-		</Helmet>
-		<SearchForm initialKeyword={keyword} initialRating={rating}/>
-		<h2 className="search__title">{`Resultados de búsqueda: 
-			"${decodeURI(keyword)}"`}</h2>
-		<Giflist gifs={gifs}></Giflist>
-		<div id="visor" ref={externalRef}></div>
+			<Helmet>
+				<title>{`Resultados de búsqueda de: ${decodeURI(keyword)}`}</title>
+				<meta name="description" 
+				content={`Resultados de búsqueda de: ${decodeURI(keyword)}`}/>
+			</Helmet>
+
+			<SearchForm initialKeyword={keyword} initialRating={rating}/>
+			
+			<h2 className="search__title">{`Resultados de búsqueda: 
+				"${decodeURI(keyword)}"`}</h2>
+
+			<Giflist gifs={gifs}></Giflist>
+
+			<div id="visor" ref={externalRef}></div>
 		</>
 		);
 }

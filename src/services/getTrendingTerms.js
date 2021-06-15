@@ -10,6 +10,11 @@ const getTrendingTerms = () => {
 			const res = response.json()
 			return res
 		}
+
+		else {
+			throw new Error(`Ocurrió un error en la petición al servidor: 
+				${response.status}`)
+		}
 	})
 	.then(res => {
 		const { data } = res

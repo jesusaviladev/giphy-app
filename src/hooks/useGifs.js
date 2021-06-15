@@ -12,7 +12,7 @@ export default function useGifs ({ keyword, rating } = { keyword: null, rating: 
 	//ESTADOS ↑
 
 	//keyword para llamar al servicio
-	const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'mike wazowski'
+	const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'dog'
 	 
 	useEffect(() => { 
 	 	//pedimos datos a la API con el servicio getGifs
