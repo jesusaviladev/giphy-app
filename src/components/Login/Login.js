@@ -44,30 +44,30 @@ const Login = ({onLogin = null}) => {
 
 	return (
 		<>	
-			<form className="login-form" id="login-form" onSubmit={handleSubmit}>
-				<div className="login-form__field">
-					<label htmlFor="username" className="login-form__label">
+			<form className="form" id="login-form" onSubmit={handleSubmit}>
+				<div className="form__field">
+					<label htmlFor="username" className="form__label">
 						User: 
 					</label>
 					<input 
 					type="text" 
 					id="username"
 					name="username"
-					className="login-form__input"
+					className="form__input"
 					placeholder="username"
 					onChange={handleChangeUsername}
 					value={username}
 					/>
 				</div>
-				<div className="login-form__field">
-					<label htmlFor="password" className="login-form__label">
+				<div className="form__field">
+					<label htmlFor="password" className="form__label">
 						Password:
 					</label>
 					<input 
 					type="password" 
 					id="password"
 					name="password"
-					className="login-form__input"
+					className="form__input"
 					placeholder="password"
 					onChange={handleChangePassword}
 					value={password}

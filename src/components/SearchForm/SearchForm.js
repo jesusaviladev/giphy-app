@@ -49,17 +49,17 @@ const SearchForm = ({initialKeyword = '', initialRating = 'g'}) => {
 	
 
 	return (
-		<form action="#" className="form" id="search" onSubmit={handleSubmit}>
+		<form action="#" className="search-form" id="search" onSubmit={handleSubmit}>
 			<input type="text" 
 				name="search" 
 				placeholder="Search a gif..."
 				onChange={handleChange}
-				className="form__input"
+				className="search-form__input"
 				value={keyword}
 			/>
 			<select value={rating} 
 			onChange={handleChangeRating} 
-			className="form__select">
+			className="search-form__select">
 				{RATINGS.map(rate => <option value={rate} 
 					key={rate}>{rate}</option>)}
 			</select>
