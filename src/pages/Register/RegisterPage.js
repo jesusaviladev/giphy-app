@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import register from '../../services/register.js'
 import './RegisterPage.css'
@@ -7,10 +7,14 @@ import { Helmet } from 'react-helmet'
 
 const RegisterPage = () => {
 
+	const [ registered, setRegistered ] = useState(false)
+
 	const handleSubmit = useCallback((values, { setFieldError })=>{
 			
 			return register(values)
-					.then(response => console.log(response))
+					.then(response => {
+						setRegistered(true)
+					})
 					.catch(response => {
 									
 						if(response.body){
@@ -42,6 +46,8 @@ const RegisterPage = () => {
 				return errors
 
 			},[])
+
+	if(registered) return <p>Te has registrado exitosamente</p>
 
 	return (
 		<>	
