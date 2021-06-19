@@ -2,6 +2,7 @@ import { useCallback, useContext, useState } from 'react'
 import Context from '../context/UserContext.js'
 import { logUser } from '../services/login.js'
 import addFavService from '../services/addFavService.js'
+import deleteFavService from '../services/deleteFavService.js'
 import debounce from 'just-debounce-it'
 
 const useUser = () => {
@@ -57,6 +58,19 @@ const useUser = () => {
 	}, 500), [setFavs, jwt])
 
 
+	const deleteFav = useCallback(debounce(({ id })=>{
+		//borrar favorito
+
+		deleteFavService(id, jwt)
+			.then(favs => {
+				
+				setFavs(favs)
+			})
+
+
+	}, 500), [setFavs, jwt])
+
+
 	//exportamos flag de login y funcion para loguearse
 	return {
 		isLogged: Boolean(jwt),
@@ -65,7 +79,8 @@ const useUser = () => {
 		login,
 		logout,
 		favs,
-		addFav
+		addFav,
+		deleteFav
 	}
 }
 

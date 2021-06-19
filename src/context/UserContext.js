@@ -9,7 +9,7 @@ export const UserContextProvider = ({children}) => {
 	const [ favs, setFavs ] = useState([])
 
 	useEffect(()=>{
-
+		//recuperamos todos los favoritos del usuario
 		if (!jwt) return setFavs([])
 
 		getUserFavs({ token: jwt })

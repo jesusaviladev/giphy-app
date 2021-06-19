@@ -6,7 +6,7 @@ import Login from '../Login/Login.js'
 
 const Fav = ({ id }) => {
 
-	const { isLogged, favs, addFav } = useUser()
+	const { isLogged, favs, addFav, deleteFav } = useUser()
 	const [ showModal, setShowModal ] = useState(false)
 	
 	const isFaved = favs.some(favId => favId === id)
@@ -14,6 +14,8 @@ const Fav = ({ id }) => {
 	const handleClick = () => {
 
 		if(!isLogged) setShowModal(true)
+
+		else if (isFaved) deleteFav({ id })
 
 		else addFav({ id })
 	}
@@ -26,7 +28,7 @@ const Fav = ({ id }) => {
 		setShowModal(false)
 	}, [])
 
-	const classForButton = isFaved ? 'fas fa-heart' : 'far fa-heart'
+	const classForButton = isFaved ? 'fas fa-times' : 'far fa-heart'
 
 	return (
 
